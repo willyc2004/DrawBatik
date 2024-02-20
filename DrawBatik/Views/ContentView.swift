@@ -1,68 +1,40 @@
-//
-//  ContentView.swift
-//  DrawBatik
-//
-//  Created by MacBook Pro on 19/02/24.
-//
-
 import SwiftUI
 
-struct Line {
-    var points = [CGPoint]()
-    var color: Color = .red
-    var lineWidth: Double = 1.0
-}
-
 struct ContentView: View {
-    
-    @State private var currentLine = Line()
-    @State private var lines: [Line] = []
-    @State private var thickness: Double = 1.0
-    
     var body: some View {
-        VStack {
-           
-            Canvas { context, size in
-                
-                for line in lines {
-                    var path = Path()
-                    path.addLines(line.points)
-                    context.stroke(path, with: .color(line.color), lineWidth: line.lineWidth)
-                }
-                
-                
-            }
-            .frame(minWidth: 400, minHeight: 400)
-            .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
-            .onChanged({ value in
-                let newPoint = value.location
-                currentLine.points.append(newPoint)
-                self.lines.append(currentLine)
-              })
-            .onEnded({ value in
-                self.lines.append(currentLine)
-                self.currentLine = Line(points: [], color: currentLine.color, lineWidth: thickness)
-            })
-            )
-            
-            HStack {
-                
-                Slider(value: $thickness, in: 1...20) {
-                    Text("Thickness")
-                }.frame(maxWidth: 200)
-                    .onChange(of: thickness) { _ in
-                        currentLine.lineWidth = thickness
-                    }
+        NavigationView {
+            ZStack {
+                // Background Image
+                Image("backgroundApp")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
 
-                Divider()
-                ColorPickerView(selectedColor: $currentLine.color)
-                    .onChange(of: currentLine.color) { newColor in
-                        print(newColor)
-                        currentLine.color = newColor
+                // Vertical Stack (VStack) aligned in the center
+                VStack {
+                    // Logo Image
+                    Image("logoApp")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 250, height: 200) // Adjust the size as needed
+
+                    // Spacer to push the button to the bottom
+                    Spacer()
+
+                    // Play Game Button with NavigationLink
+                    NavigationLink(destination: HomeScreen().environment(ModelData())) {
+                        Text("Play Game")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.brown) // You can customize the button color
+                            .cornerRadius(10)
+                    }
+                    .padding(.bottom, 50)
                 }
+                .padding() // Add padding to the VStack
             }
-            
-        }.padding()
+        }
     }
 }
 
