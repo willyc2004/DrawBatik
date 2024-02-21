@@ -1,12 +1,12 @@
 import SwiftUI
 
 
-struct LandmarkDetail: View {
+struct BatikDetail: View {
     @Environment(ModelData.self) var modelData
-    var landmark: Landmark
+    var batik: Batik
     
-    var landmarkIndex: Int {
-        modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
+    var batikIndex: Int {
+        modelData.batiks.firstIndex(where: { $0.id == batik.id })!
     }
     
     var body: some View {
@@ -19,35 +19,37 @@ struct LandmarkDetail: View {
                     .frame(height: 300)
                 .clipped()
                 
-//                NavigationLink(destination: DrawMain(batik: batik)) {
-//                    Text("Draw Batik")
-//                        .font(.title)
-//                        .foregroundColor(.white)
-//                        .padding()
-//                        .background(Color.brown) // You can customize the button color
-//                        .cornerRadius(10)
-//                }
-//                .padding(.bottom, 50)
+                NavigationLink(destination: DrawMain(batik: batik)) {
+                    Text("Draw Batik")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.brown) // You can customize the button color
+                        .cornerRadius(10)
+                }
+                .padding(.bottom, 50)
             }
             
             
-            CircleImage(image: landmark.image)
+            CircleImage(image: batik.image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
+                
+        
             
             
             VStack(alignment: .leading) {
                 HStack {
-                    Text(landmark.name)
+                    Text(batik.name)
                         .font(.title)
-                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                    FavoriteButton(isSet: $modelData.batiks[batikIndex].isFavorite)
                 }
                 
                 
                 HStack {
-                    Text(landmark.park)
+                    Text(batik.asal)
                     Spacer()
-                    Text(landmark.state)
+                    Text(batik.state)
                 }
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
@@ -56,16 +58,16 @@ struct LandmarkDetail: View {
                 Divider()
                 
                 
-                Text("About \(landmark.name)")
+                Text("About \(batik.name)")
                     .font(.title2)
-                Text(landmark.description)
+                Text(batik.description)
             }
             .padding()
             
             
             Spacer()
         }
-        .navigationTitle(landmark.name)
+        .navigationTitle(batik.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -73,6 +75,6 @@ struct LandmarkDetail: View {
 
 #Preview {
     let modelData = ModelData()
-    return LandmarkDetail(landmark: modelData.landmarks[0])
+    return BatikDetail(batik: modelData.batiks[0])
         .environment(modelData)
 }

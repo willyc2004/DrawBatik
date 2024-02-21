@@ -25,6 +25,12 @@
 		0460AEFD2B84693B00D9B183 /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460AEF92B84693B00D9B183 /* FeatureCard.swift */; };
 		0460AF0D2B84694700D9B183 /* CategoryHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460AF0A2B84694700D9B183 /* CategoryHome.swift */; };
 		0460AF262B846A2B00D9B183 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460AF252B846A2B00D9B183 /* HomeScreen.swift */; };
+		04B661632B85AFB300DB4608 /* batikData.json in Resources */ = {isa = PBXBuildFile; fileRef = 04B661622B85AFB300DB4608 /* batikData.json */; };
+		04B661652B85B1A900DB4608 /* Batik.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B661642B85B1A900DB4608 /* Batik.swift */; };
+		04B661672B85B4AE00DB4608 /* BatikCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B661662B85B4AE00DB4608 /* BatikCard.swift */; };
+		04B6616A2B85B84900DB4608 /* BatikList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B661692B85B84900DB4608 /* BatikList.swift */; };
+		04B6616C2B85B85B00DB4608 /* BatikRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6616B2B85B85B00DB4608 /* BatikRow.swift */; };
+		04B6616E2B85B9C000DB4608 /* BatikDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6616D2B85B9C000DB4608 /* BatikDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +53,12 @@
 		0460AEF92B84693B00D9B183 /* FeatureCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
 		0460AF0A2B84694700D9B183 /* CategoryHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryHome.swift; sourceTree = "<group>"; };
 		0460AF252B846A2B00D9B183 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		04B661622B85AFB300DB4608 /* batikData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = batikData.json; sourceTree = "<group>"; };
+		04B661642B85B1A900DB4608 /* Batik.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Batik.swift; sourceTree = "<group>"; };
+		04B661662B85B4AE00DB4608 /* BatikCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatikCard.swift; sourceTree = "<group>"; };
+		04B661692B85B84900DB4608 /* BatikList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatikList.swift; sourceTree = "<group>"; };
+		04B6616B2B85B85B00DB4608 /* BatikRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatikRow.swift; sourceTree = "<group>"; };
+		04B6616D2B85B9C000DB4608 /* BatikDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatikDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				043CFD792B8391C100AEFAA4 /* DrawBatikApp.swift */,
+				04B661682B85B83900DB4608 /* Batiks */,
 				0460AF272B8471CA00D9B183 /* Draw */,
 				0460AF082B84694700D9B183 /* Categories */,
 				0460AEF12B84693300D9B183 /* Landmarks */,
@@ -113,6 +126,7 @@
 		0460AEDC2B84690100D9B183 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04B661622B85AFB300DB4608 /* batikData.json */,
 				0460AEDE2B84690100D9B183 /* landmarkData.json */,
 			);
 			path = Resources;
@@ -121,6 +135,7 @@
 		0460AEE12B84691800D9B183 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04B661642B85B1A900DB4608 /* Batik.swift */,
 				0460AEE42B84691800D9B183 /* ModelData.swift */,
 				0460AEE52B84691800D9B183 /* Landmark.swift */,
 			);
@@ -151,6 +166,7 @@
 			children = (
 				0460AEF92B84693B00D9B183 /* FeatureCard.swift */,
 				0460AF0A2B84694700D9B183 /* CategoryHome.swift */,
+				04B661662B85B4AE00DB4608 /* BatikCard.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -163,6 +179,16 @@
 				0460AEDA2B8465DD00D9B183 /* DrawMain.swift */,
 			);
 			path = Draw;
+			sourceTree = "<group>";
+		};
+		04B661682B85B83900DB4608 /* Batiks */ = {
+			isa = PBXGroup;
+			children = (
+				04B661692B85B84900DB4608 /* BatikList.swift */,
+				04B6616B2B85B85B00DB4608 /* BatikRow.swift */,
+				04B6616D2B85B9C000DB4608 /* BatikDetail.swift */,
+			);
+			path = Batiks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +252,7 @@
 				043CFD812B8391C300AEFAA4 /* Preview Assets.xcassets in Resources */,
 				0460AEE02B84690100D9B183 /* landmarkData.json in Resources */,
 				043CFD7E2B8391C300AEFAA4 /* Assets.xcassets in Resources */,
+				04B661632B85AFB300DB4608 /* batikData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B6616C2B85B85B00DB4608 /* BatikRow.swift in Sources */,
 				043CFD992B8394F900AEFAA4 /* ColorPickerView.swift in Sources */,
+				04B6616E2B85B9C000DB4608 /* BatikDetail.swift in Sources */,
+				04B661652B85B1A900DB4608 /* Batik.swift in Sources */,
 				0460AEFD2B84693B00D9B183 /* FeatureCard.swift in Sources */,
 				0460AF0D2B84694700D9B183 /* CategoryHome.swift in Sources */,
 				043CFD7C2B8391C100AEFAA4 /* ContentView.swift in Sources */,
@@ -247,10 +277,12 @@
 				0460AEF72B84693300D9B183 /* LandmarkRow.swift in Sources */,
 				0460AEE92B84691800D9B183 /* Landmark.swift in Sources */,
 				0460AEE82B84691800D9B183 /* ModelData.swift in Sources */,
+				04B661672B85B4AE00DB4608 /* BatikCard.swift in Sources */,
 				0460AEEF2B84692B00D9B183 /* CircleImage.swift in Sources */,
 				0460AEDB2B8465DD00D9B183 /* DrawMain.swift in Sources */,
 				0460AF262B846A2B00D9B183 /* HomeScreen.swift in Sources */,
 				043CFD9B2B83950800AEFAA4 /* Constants.swift in Sources */,
+				04B6616A2B85B84900DB4608 /* BatikList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@ struct HomeScreen: View {
                     .tag(Tab.featured)
 
 
-                LandmarkList()
+                BatikList()
                     .tabItem {
                         Label("List", systemImage: "list.bullet")
                     }

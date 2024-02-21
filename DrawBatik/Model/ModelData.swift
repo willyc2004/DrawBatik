@@ -5,6 +5,8 @@ import Foundation
 class ModelData {
     var landmarks: [Landmark] = load("landmarkData.json")
     
+    var batiks: [Batik] = load("batikData.json")
+    
 
     var features: [Landmark] {
         landmarks.filter { $0.isFeatured }

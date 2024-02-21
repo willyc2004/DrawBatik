@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Batik Kawung",
+        "asal": "Corak Jawa",
+        "state": "Indonesia",
+        "id": 1001,
+        "isFavorite": true,
+        
+        "description": "Kawung Batik is a batik motif characterized by circular patterns resembling the kawung fruit (a type of coconut or sometimes considered as palm fruit or sugar palm). These circles are meticulously arranged in a geometric fashion. At times, this motif is also interpreted as an image of lotus flowers with four blooming petals. The lotus flower symbolizes longevity and purity. This particular batik motif, Kawung, is renowned in the Javanese region. The term Kawung in Javanese refers to the fruit of the aren or kolang-kaling palm tree. Typically, Kawung motifs are named based on the size and shape of the circular or elongated forms within a specific pattern, often combined with other batik motifs.",
+        "imageName": "BatikKawung",
+        "guideline": "BatikKawungGuideline"
+    },
+    
+]

@@ -14,20 +14,23 @@ struct Line {
 }
 
 struct DrawMain: View {
+    @Environment(ModelData.self) var modelData
+    var batik: Batik
+    
     @State private var currentLine = Line()
     @State private var lines: [Line] = []
     @State private var thickness: Double = 1.0
-
+    
     var body: some View {
         VStack {
             
             
             ZStack {
-                Image("backgroundApp") // Replace "YourBackgroundImageName" with the actual name of your background image
+                batik.imageGuideline
                     .resizable()
                     .scaledToFill()
                     .frame(height: 360)
-                .clipped()
+                    .clipped()
                 // Outline for the canvas
                 Rectangle()
                     .stroke(Color.black, lineWidth: 4)
@@ -46,10 +49,10 @@ struct DrawMain: View {
                         currentLine.points.append(newPoint)
                         self.lines.append(currentLine)
                     })
-                    .onEnded({ value in
-                        self.lines.append(currentLine)
-                        self.currentLine = Line(points: [], color: currentLine.color, lineWidth: thickness)
-                    })
+                        .onEnded({ value in
+                            self.lines.append(currentLine)
+                            self.currentLine = Line(points: [], color: currentLine.color, lineWidth: thickness)
+                        })
                 )
             }
             
@@ -61,13 +64,13 @@ struct DrawMain: View {
                 .onChange(of: thickness) { _ in
                     currentLine.lineWidth = thickness
                 }
-
+                
                 Divider()
-
+                
                 ColorPickerView(selectedColor: $currentLine.color)
                     .onChange(of: currentLine.color) { newColor in
                         currentLine.color = newColor
-                }
+                    }
             }
         }
         .padding()
@@ -75,8 +78,8 @@ struct DrawMain: View {
 }
 
 
-struct DrawMain_Previews: PreviewProvider {
-    static var previews: some View {
-        DrawMain()
-    }
+#Preview {
+    let modelData = ModelData()
+    return DrawMain(batik: modelData.batiks[0])
+        .environment(modelData)
 }
